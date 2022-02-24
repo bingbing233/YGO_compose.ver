@@ -1,4 +1,4 @@
-package com.example.ygo
+package com.example.ygo.ui.page
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -21,11 +21,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import coil.compose.ImagePainter
 import coil.compose.rememberImagePainter
-import coil.transform.BlurTransformation
 import com.airbnb.lottie.compose.*
-import com.example.ygo.ui.theme.*
+import com.example.ygo.Card
+import com.example.ygo.CardViewModel
+import com.example.ygo.R
+import com.example.ygo.getColorByCardType
 import com.google.accompanist.flowlayout.FlowRow
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 import java.util.*
@@ -118,7 +119,7 @@ fun SearchField() {
 
 @Composable
 fun CardItem(card: Card) {
-    val viewModel:CardViewModel = viewModel()
+    val viewModel: CardViewModel = viewModel()
     Card(modifier = Modifier
         .clickable {
             viewModel.curCard = card
@@ -151,9 +152,11 @@ fun CardItem(card: Card) {
                         color = getColorByCardType(card.type.lowercase(Locale.ROOT)),
                         fontSize = 14.sp
                     )
-                    Text(text = ((card.attribute ?: ("" + " "))), fontSize = 14.sp)
-                    Text(text = card.race + " ", fontSize = 14.sp)
-                    Text(text = "${card.atk}/${card.def}", fontSize = 14.sp)
+                    card.attribute?.let { Text(text = "$it ", fontSize = 14.sp) }
+                    card.race?.let { Text(text = "$it ", fontSize = 14.sp) }
+                    if (card.type.lowercase().contains("monster")) {
+                        Text(text = "${card.atk}/${card.def}", fontSize = 14.sp)
+                    }
                 }
             }
         }

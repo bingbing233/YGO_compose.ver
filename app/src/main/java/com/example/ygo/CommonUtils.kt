@@ -51,3 +51,16 @@ fun attr2Hanzi(attr:String): String {
         else -> ""
     }
 }
+
+fun getAttrImageId(attr: String):Int{
+    return when(attr){
+        "dark" -> R.drawable.dark
+        "water" -> R.drawable.water
+        "wind" -> R.drawable.wind
+        "fire" -> R.drawable.fire
+        "divine" -> R.drawable.god
+        "earth"-> R.drawable.earth
+        "light" -> R.drawable.light
+        else -> 0
+    }
+}

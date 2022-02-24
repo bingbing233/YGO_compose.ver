@@ -1,4 +1,4 @@
-package com.example.ygo
+package com.example.ygo.ui.page
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -12,6 +12,8 @@ import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.ygo.attr2Hanzi
+import com.example.ygo.getColorByCardAttr
 
 @Composable
 fun CardAttribute(modifier: Modifier = Modifier, attr: String) {
