@@ -198,23 +198,4 @@ fun Error() {
     }
 }
 
-fun getColorByCardType(type: String): Color {
-    if (type.contains("normal"))
-        return normalMonster
-    if (type.contains("effect"))
-        return effectMonster
-    if (type.contains("fusion"))
-        return fusionMonster
-    if (type.contains("link"))
-        return linkMonster
-    if (type.contains("xyz"))
-        return xyzMonster
-    if (type.contains("ritual"))
-        return ritualMonster
-    if (type.contains("spell"))
-        return spell
-    if (type.contains("trap"))
-        return trap
-    return Color.Black
-}
 

@@ -16,3 +16,11 @@ val linkMonster = Color(0xFF2196F3)
 val xyzMonster = Color.Black
 val spell = Color(0xFF229973)
 val trap = Color(0xFF5E2299)
+
+val god = Color(0xFFE9E197)
+val dark = Purple500
+val light = Color.Yellow
+val wind = Color(0xFF25F59B)
+val fire = Color.Red
+val water = Color.Blue
+val earth = Color(0xFF2A272E)

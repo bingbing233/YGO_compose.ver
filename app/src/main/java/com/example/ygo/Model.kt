@@ -13,7 +13,7 @@ data class Card(
     val def: Int,
     val desc: String,
     val id: Int,
-    val level: Int,
+    val level: Int?,
     val name: String,
     val race: String?,
     val type: String
